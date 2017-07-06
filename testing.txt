@@ -1,0 +1,33 @@
+CREATE TABLE transaction (
+
+  id uuid NOT NULL,
+
+  lookupcode character varying(32) NOT NULL DEFAULT(''),
+  
+  firstname character varying(128) NOT NULL DEFAULT(''),
+
+  count int NOT NULL DEFAULT(0),
+
+  createdon timestamp without time zone NOT NULL DEFAULT now(),
+
+  CONSTRAINT transaction_pkey PRIMARY KEY (id)
+
+) WITH (
+
+  OIDS=FALSE
+
+);
+
+INSERT INTO transaction VALUES (
+
+       uuid_generate_v4()
+
+     , 'lookupcode1'
+	 
+	 , 'NOOOOOO'
+
+     , 550
+
+     , current_timestamp
+
+);
